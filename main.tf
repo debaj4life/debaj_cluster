@@ -6,8 +6,8 @@ resource "aws_vpc" "main" {
 
 
 
-resource "aws_eks_cluster" "demo-eks" {
-  name     = "demo-eks-cluster"
+resource "aws_eks_cluster" "debaj-eks" {
+  name     = "debaj-eks-cluster"
   role_arn = aws_iam_role.debaj_app_eks_role.arn
 
   vpc_config {
@@ -21,7 +21,7 @@ resource "aws_eks_cluster" "demo-eks" {
 # AWS node group
 
 resource "aws_eks_node_group" "node_group" {
-  cluster_name    = aws_eks_cluster.demo-eks.name
+  cluster_name    = aws_eks_cluster.debaj-eks.name
   node_group_name = "debaj-node-group"
   node_role_arn   = aws_iam_role.debaj_node_instance_role.arn
   subnet_ids      = var.subnet_ranges
