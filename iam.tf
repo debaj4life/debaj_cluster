@@ -25,7 +25,7 @@ resource "aws_iam_role_policy_attachment" "debaj_eks_policy" {
 
 
 
-# Node for node group
+# IAM role for node group
 
 resource "aws_iam_role" "debaj_node_instance_role" {
   name = "debaj-node-instance-role"
